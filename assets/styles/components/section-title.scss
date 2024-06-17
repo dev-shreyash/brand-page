@@ -1,0 +1,59 @@
+@import '../variable.scss';
+@import '../responsive.scss';
+@import './button.scss';
+
+@mixin  section-title-style {
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sec2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+
+
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        .default-btn {
+            width: fit-content;
+            @include button-primary;
+        }
+
+        h2 {
+            font-size: 36px;
+            padding: 0;
+
+            @include sm {
+                font-size: 26px;
+            }
+        }
+    }
+
+    .section-title {
+
+
+        .sub-title {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 20px;
+            text-transform: uppercase;
+
+            .line {
+                width: 16px;
+                height: 6px;
+                border-radius: 30px;
+                background-color: $primary-color;
+            }
+        }
+
+
+    }
+}

@@ -10,7 +10,7 @@
     background-size: cover;
     background-position: center;
     height: 800px;
-  
+   margin: auto;
     @include sm {
       height: 1300px;
       padding: 15px;
@@ -56,7 +56,7 @@
     align-items: center;
     max-width: 1320px;
     height: 100%;
-    margin: 0;
+    margin: auto;
     gap: 65px;
   
     @include sm {
@@ -68,10 +68,14 @@
     }
   
     .input-item {
+      margin: auto;
+
       .banner-content {
         display: flex;
         flex-direction: column;
         gap: 25px;
+        margin: auto;
+
         .title {
           font-size: 1.4rem;
   
@@ -104,7 +108,7 @@
   }
   
   .input-item {
-    width: 50%;
+    //width: 50%;
     padding: 15px;
   
     @include sm {

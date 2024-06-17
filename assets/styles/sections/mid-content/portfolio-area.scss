@@ -1,5 +1,6 @@
 @import '../../variable.scss';
 @import '../../responsive.scss';
+@import '../../components/section-title.scss';
 
 
 @mixin portfolio-area-style{
@@ -15,5 +16,12 @@
     @include sm{
       padding: 20px 20px;
   
+    }
+
+    .container{
+
+        .portfolio-section-title{
+            @include section-title-style;
+        }
     }
 }

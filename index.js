@@ -32,39 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //navbar toggle
 
-document.addEventListener('DOMContentLoaded', function() {
-  const navToggle = document.getElementById('nav-toggle');
+document.addEventListener('DOMContentLoaded', function () {
+  const navMobile = document.querySelector('.nav-mobile');
   const navList = document.querySelector('.nav-list');
 
-  navToggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    navList.classList.toggle('nav-active');
-    navToggle.classList.toggle('active');
-  });
-
-  document.querySelectorAll('nav ul li a:not(:only-child)').forEach((el) => {
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-      const dropdown = this.nextElementSibling;
-      if (dropdown.style.display === 'block') {
-        dropdown.style.display = 'none';
-      } else {
-        document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
-          dropdown.style.display = 'none';
-        });
-        dropdown.style.display = 'block';
-      }
-    });
-  });
-
-  document.addEventListener('click', function(e) {
-    if (!navToggle.contains(e.target) && !navList.contains(e.target)) {
-      navList.classList.remove('nav-active');
-      navToggle.classList.remove('active');
-    }
+  navMobile.addEventListener('click', function () {
+    navList.classList.toggle('open');
   });
 });
-
 
 //slider value
 document.addEventListener('DOMContentLoaded', (event) => {
