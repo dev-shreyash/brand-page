@@ -27,20 +27,22 @@ html, body {
 
 // end-preloader
 
+//top header starts
 .top-header-area {
  @include top-header-style;
 }
-
 //to header ends
 
 
 //navbar starts
+.navigation{
+  @include navbar-style;
+}
 
+//navbar ends 
 
 
 // banner start
-
-
 .banner-area {
  @include top-banner-style;
 }
@@ -66,7 +68,7 @@ html, body {
   //overflow: hidden; // Hide any overflowing content
   @include sm {
     position: relative;
-    height: 85%;
+    height: 150rem;
   }
 }
 

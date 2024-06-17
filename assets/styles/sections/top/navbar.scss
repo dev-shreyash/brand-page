@@ -1,7 +1,134 @@
 @import '../../variable.scss';
 @import '../../responsive.scss';
+@import '../../components/button.scss';
 
-@mixin nav-style{
+@mixin navbar-style {
+  z-index: 99;
 
-    
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: auto;
+
+    nav {
+      display: flex;
+
+      .nav-mobile {
+        display: none;
+      }
+
+      .nav-list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: $secondary-color;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: $smooth;
+
+        li {
+          position: relative; // Ensure the dropdown is positioned correctly
+          transition: $smooth;
+          text-align: left;
+
+          &:hover,
+          &:hover > .nav-dropdown,
+          .nav-dropdown:hover {
+            z-index: 99;
+            .nav-dropdown {
+              padding: 30px 15px 20px 10px !important;
+              width: 150px;
+              display: flex;
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0) translateX(-10px);
+              
+
+            }
+          }
+
+          a {
+            transition: $smooth;
+
+            &:after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 2px;
+              background: $primary-color;
+              transition: width .3s;
+            }
+
+            &:hover {
+              color: $primary-color;
+            }
+
+            &:hover::after {
+              width: 30%;
+            }
+          }
+        }
+
+        .nav-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: $white;
+         // padding: 15px 35px 15px 10px;
+          flex-direction: column;
+          gap: 20px;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+          transition: opacity $smooth, visibility $smooth, transform $smooth;
+
+          li {
+            a {
+              text-align: left;
+            }
+          }
+        }
+        .nav-search{
+            button{
+                background: none;
+                border: none;
+
+                i{
+                    background: none;
+                }
+            }
+            input{
+                border: none;
+                padding: 10px;
+
+                &:focus {
+                    outline: none; 
+                    border: none;
+                 }
+
+                
+            }
+            position: relative;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: 25px;
+                  bottom: -2px; 
+                  width: 60%; 
+                  height: 1px; 
+                  background-color:  rgba($secondary-color, 0.5); 
+                  transition: background-color 0.3s ease-in-out; 
+                }
+        }
+        .btn {
+          button {
+            @include button-primary;
+          }
+        }
+      }
+    }
+  }
 }

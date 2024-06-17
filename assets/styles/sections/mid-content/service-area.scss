@@ -30,25 +30,33 @@
   
       .services-section-title {
         @include sm{
+         display: flex;
           flex-direction: column;
+          gap: 20px;
         }
         .sec2 {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           padding: 0;
+
+          
   
           @include sm{
             flex-direction: column;
           }
   
           .default-btn {
+            width: fit-content;
            @include button-primary;
           }
   
           h2 {
             font-size: 36px;
             padding: 0;
+            @include sm{
+                font-size: 26px;
+              }
           }
         }
   

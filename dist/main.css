@@ -127,11 +127,14 @@
   align-items: center;
   gap: 10px;
   transition: all 300ms linear;
+  font-size: 18px;
+  font-weight: 700;
 }
 @media (max-width: 738px) {
   .banner-content .banner-buttons li .btn {
     padding: 15px 30px;
     gap: 8px;
+    font-size: 16px;
   }
 }
 .banner-content .banner-buttons li .btn:hover {
@@ -163,7 +166,8 @@
   .quote-form {
     width: 100%;
     padding: 20px;
-    padding: 3vw;
+    padding: 18px;
+    margin: auto;
   }
 }
 .quote-form .form-title h3 {
@@ -628,6 +632,133 @@ html #root, body #root {
   filter: contrast(0) brightness(100);
 }
 
+.navigation {
+  z-index: 99;
+}
+.navigation .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: auto;
+}
+.navigation .nav-container nav {
+  display: flex;
+}
+.navigation .nav-container nav .nav-mobile {
+  display: none;
+}
+.navigation .nav-container nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #02323e;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 300ms linear;
+}
+.navigation .nav-container nav .nav-list li {
+  position: relative;
+  transition: all 300ms linear;
+  text-align: left;
+}
+.navigation .nav-container nav .nav-list li:hover, .navigation .nav-container nav .nav-list li:hover > .nav-dropdown,
+.navigation .nav-container nav .nav-list li .nav-dropdown:hover {
+  z-index: 99;
+}
+.navigation .nav-container nav .nav-list li:hover .nav-dropdown, .navigation .nav-container nav .nav-list li:hover > .nav-dropdown .nav-dropdown,
+.navigation .nav-container nav .nav-list li .nav-dropdown:hover .nav-dropdown {
+  padding: 30px 15px 20px 10px !important;
+  width: 150px;
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) translateX(-10px);
+}
+.navigation .nav-container nav .nav-list li a {
+  transition: all 300ms linear;
+}
+.navigation .nav-container nav .nav-list li a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fd5523;
+  transition: width 0.3s;
+}
+.navigation .nav-container nav .nav-list li a:hover {
+  color: #fd5523;
+}
+.navigation .nav-container nav .nav-list li a:hover::after {
+  width: 30%;
+}
+.navigation .nav-container nav .nav-list .nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity all 300ms linear, visibility all 300ms linear, transform all 300ms linear;
+}
+.navigation .nav-container nav .nav-list .nav-dropdown li a {
+  text-align: left;
+}
+.navigation .nav-container nav .nav-list .nav-search {
+  position: relative;
+}
+.navigation .nav-container nav .nav-list .nav-search button {
+  background: none;
+  border: none;
+}
+.navigation .nav-container nav .nav-list .nav-search button i {
+  background: none;
+}
+.navigation .nav-container nav .nav-list .nav-search input {
+  border: none;
+  padding: 10px;
+}
+.navigation .nav-container nav .nav-list .nav-search input:focus {
+  outline: none;
+  border: none;
+}
+.navigation .nav-container nav .nav-list .nav-search::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  bottom: -2px;
+  width: 60%;
+  height: 1px;
+  background-color: rgba(2, 50, 62, 0.5);
+  transition: background-color 0.3s ease-in-out;
+}
+.navigation .nav-container nav .nav-list .btn button {
+  background-color: #fd5523;
+  color: #fff;
+  padding: 20px 35px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 300ms linear;
+  font-size: 18px;
+  font-weight: 700;
+}
+@media (max-width: 738px) {
+  .navigation .nav-container nav .nav-list .btn button {
+    padding: 15px 30px;
+    gap: 8px;
+    font-size: 16px;
+  }
+}
+.navigation .nav-container nav .nav-list .btn button:hover {
+  background-color: #02323e;
+}
+
 .banner-area {
   position: relative;
   z-index: 1;
@@ -840,7 +971,7 @@ html #root, body #root {
 @media (max-width: 738px) {
   .helper {
     position: relative;
-    height: 85%;
+    height: 150rem;
   }
 }
 
@@ -929,11 +1060,14 @@ html #root, body #root {
   align-items: center;
   gap: 10px;
   transition: all 300ms linear;
+  font-size: 18px;
+  font-weight: 700;
 }
 @media (max-width: 738px) {
   .about .container .content .text .buttons .btn {
     padding: 15px 30px;
     gap: 8px;
+    font-size: 16px;
   }
 }
 .about .container .content .text .buttons .btn:hover {
@@ -1102,7 +1236,9 @@ html #root, body #root {
 }
 @media (max-width: 738px) {
   .services-area .container .services-section-title {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 }
 .services-area .container .services-section-title .sec2 {
@@ -1117,6 +1253,7 @@ html #root, body #root {
   }
 }
 .services-area .container .services-section-title .sec2 .default-btn {
+  width: fit-content;
   background-color: #fd5523;
   color: #fff;
   padding: 20px 35px;
@@ -1126,11 +1263,14 @@ html #root, body #root {
   align-items: center;
   gap: 10px;
   transition: all 300ms linear;
+  font-size: 18px;
+  font-weight: 700;
 }
 @media (max-width: 738px) {
   .services-area .container .services-section-title .sec2 .default-btn {
     padding: 15px 30px;
     gap: 8px;
+    font-size: 16px;
   }
 }
 .services-area .container .services-section-title .sec2 .default-btn:hover {
@@ -1139,6 +1279,11 @@ html #root, body #root {
 .services-area .container .services-section-title .sec2 h2 {
   font-size: 36px;
   padding: 0;
+}
+@media (max-width: 738px) {
+  .services-area .container .services-section-title .sec2 h2 {
+    font-size: 26px;
+  }
 }
 .services-area .container .services-section-title .section-title .sub-title {
   display: flex;
