@@ -1,0 +1,16 @@
+@media (max-width: 738px) {
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+    
+
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+}
