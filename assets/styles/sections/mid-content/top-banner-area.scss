@@ -1,0 +1,521 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+
+
+@mixin top-banner-style{
+    position: relative;
+    z-index: 1;
+    padding: 50px 0;
+    background-image: url("https://tf.insomniacafe.org/insotrans/assets/images/banner/banner-bg-1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+  
+    @include sm {
+      height: 1300px;
+      padding: 15px;
+    }
+  
+    // Pseudo-element for gradient overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right, $secondary-color, rgba(0, 0, 0, 0.5)); // Adjust the gradient as needed
+      z-index: -1; // Place the gradient behind content
+    }
+  
+    .container {
+      position: relative;
+      z-index: 1; // Ensure content is above gradient
+    }
+  }
+  
+  .container {
+    width: 100%;
+    //max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  
+    @include sm {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+  
+  .main-content {
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1320px;
+    height: 100%;
+    margin: 0;
+    gap: 65px;
+  
+    @include sm {
+      width: 100%; // Ensure the content takes the full width
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .input-item {
+      .banner-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        .title {
+          font-size: 1.4rem;
+  
+          .sub-title {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+  
+            .line {
+              width: 16px;
+              height: 6px;
+              border-radius: 30px;
+              background-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  .input-item {
+    width: 50%;
+    padding: 15px;
+  
+    @include sm {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+  
+  .banner-content {
+    .title {
+      .sub-title {
+        display: block;
+        position: relative;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+  
+        @include sm {
+          font-size: 1em;
+        }
+      }
+  
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+  
+        @include sm {
+          font-size: 2em;
+          margin-bottom: 10px;
+        }
+      }
+  
+      p {
+        font-size: 1em;
+  
+        @include sm {
+          font-size: 0.9em;
+        }
+      }
+    }
+  
+    .banner-buttons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+  
+      @include sm {
+        //flex-direction: column;
+        gap: 10px;
+      }
+  
+      li {
+        .btn {
+          @include button-primary;
+        }
+  
+        &:nth-child(2) .btn {
+         @include button-secondary;
+        }
+      }
+    }
+  }
+  
+  .quote-form {
+    background-color: $white;
+    color: $secondary-color;
+    padding: 2vw;
+    border-radius: none;
+    width: 450px;
+  
+    @include sm {
+      width: 100%;
+      padding: 20px;
+      padding: 3vw;
+    }
+  
+    .form-title {
+      h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+  
+        @include sm {
+          font-size: 1.2em;
+        }
+      }
+  
+      p {
+        font-size: 1em;
+  
+        @include sm {
+          font-size: 0.9em;
+        }
+      }
+    }
+  
+    form {
+      .row {
+        display: flex;
+        flex-wrap: wrap; // Allows items to wrap to the next line if necessary
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+  
+        @include sm {
+          flex-direction: column;
+        }
+  
+        .input-item {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0px 0;
+          gap: 10px;
+          flex: 1; // Allows item to take available space proportionally
+          padding-right: 25px;
+          box-sizing: border-box;
+  
+          @include sm {
+            width: 100%;
+          }
+  
+          .form-group {
+            label {
+              display: block;
+              margin: 15px 0 15px 0;
+              font-size: 1.2em;
+              padding: 0;
+  
+              @include sm {
+                font-size: 1em;
+              }
+            }
+  
+            input {
+              width: 100%;
+              padding: 16px 15px;
+              border: 1px solid #ccc;
+  
+              @include sm {
+                width: 340px;
+                padding: 15px;
+  
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .filter-info {
+      margin: 20px 0;
+  
+      @include sm {
+        margin: 15px 0;
+      }
+  
+      h6 {
+        margin-bottom: 10px;
+        font-size: 1em;
+  
+        @include sm {
+          font-size: 0.9em;
+        }
+      }
+  
+      .range-slider {
+        display: flex;
+        align-items: center;
+  
+        @include sm {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+  
+        .range-slider-range {
+          flex: 1;
+          transition: all 300ms linear;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 100%;
+          height: 8px;
+          background: transparent;
+          outline: none;
+          opacity: 0.7;
+          transition: opacity 0.2s;
+  
+          &:hover {
+            opacity: 1;
+          }
+  
+          &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #ddd;
+            /* Track color */
+            border-radius: 5px;
+          }
+  
+          &::-moz-range-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #ddd;
+            /* Track color */
+            border-radius: 5px;
+          }
+  
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #ffffff;
+            /* Thumb color */
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: -8.5px;
+            /* Adjust to align thumb with track */
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+          }
+  
+          &::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #ffffff;
+            /* Thumb color */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+          }
+  
+          &::-ms-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+          }
+  
+          &::-ms-thumb {
+            width: 15px;
+            height: 15px;
+            background: #ffffff;
+            /* Thumb color */
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: 0;
+            /* Adjust to align thumb with track */
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+          }
+  
+          &::-ms-fill-lower {
+            background: #ddd;
+            /* Track color */
+            border-radius: 4px;
+          }
+  
+          &::-ms-fill-upper {
+            background: #ddd;
+            /* Track color */
+            border-radius: 4px;
+          }
+        }
+  
+        .range-slider-value {
+          padding-left: 10px;
+          font-size: 1em;
+  
+          @include sm {
+            padding-left: 0;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  
+    .refrigerated {
+      transition: all 300ms linear;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      justify-content: space-between;
+  
+      @include sm {
+        //flex-direction: column;
+        align-items: center;
+        align-items: flex-start;
+      }
+  
+      h3 {
+        margin: 0;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        @include sm {
+          font-size: 0.9em;
+        }
+  
+        input[type="checkbox"] {
+          height: 0;
+          width: 0;
+          visibility: hidden;
+        }
+  
+        label {
+          cursor: pointer;
+          text-indent: -9999px;
+          width: 190px;
+          height: 100px;
+          background: #999;
+          display: block;
+          margin-left: 50px;
+          border-radius: 100px;
+          position: absolute;
+          transform: scale(0.3);
+          -webkit-tap-highlight-color: transparent;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+            rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+  
+          @include sm {
+            width: 150px;
+            height: 80px;
+          }
+        }
+  
+        label:after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          width: 90px;
+          height: 90px;
+          background: #fff;
+          border-radius: 90px;
+          transition: all 300ms linear;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+            rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  
+          @include sm {
+            width: 70px;
+            height: 70px;
+          }
+        }
+  
+        input:checked+label {
+          background: $primary-color;
+        }
+  
+        input:checked+label:after {
+          left: calc(100% - 5px);
+          transform: translateX(-100%);
+        }
+  
+        label:active:after {
+          width: 130px;
+  
+          @include sm {
+            width: 100px;
+          }
+        }
+  
+        label {
+          font-size: 1em;
+          color: $secondary-color;
+          cursor: pointer;
+        }
+      }
+  
+      span {
+        background-color: $primary-color;
+        color: $white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: all 300ms linear;
+  
+        @include sm {
+          padding: 8px 15px;
+        }
+      }
+    }
+  
+    .btn-submit {
+      background-color: $primary-color;
+      color: #fff;
+      padding: 20px 20px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 300ms linear;
+  
+      @include sm {
+        padding: 8px 15px;
+      }
+  
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+}

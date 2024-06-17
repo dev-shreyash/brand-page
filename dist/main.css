@@ -1,185 +1,4 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
-html *, body * {
-  scrollbar-width: none;
-  font-synthesis: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html * -webkit-scrollbar, body * -webkit-scrollbar {
-  display: none; /* Hide scrollbar in Chrome, Safari, Opera */
-}
-html a, body a {
-  text-decoration: none;
-  color: inherit;
-}
-html li, body li {
-  list-style: none;
-}
-html html, html body, body html, body body {
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-}
-html body, body body {
-  position: relative; /* Ensure relative positioning */
-  min-height: 100vh; /* Ensure body covers the entire viewport height */
-}
-html #root, body #root {
-  overflow-x: hidden; /* Hide any overflow from the root element */
-  min-height: 100vh; /* Ensure root element covers the entire viewport height */
-}
-
-@keyframes elastic {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(20%);
-    opacity: 1;
-  }
-  70% {
-    transform: translateY(-10%);
-  }
-  90% {
-    transform: translateY(5%);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.preloader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  position: absolute;
-  z-index: 999;
-}
-.preloader img {
-  width: 100px;
-  margin-bottom: 20px;
-}
-.preloader .logo {
-  display: flex;
-  align-items: center;
-}
-.preloader .logo .logo-items {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0 5px;
-  opacity: 0;
-  animation: elastic 1.5s ease-in-out forwards;
-}
-.preloader .logo .logo-items:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.preloader .logo .logo-items:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.preloader .logo .logo-items:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.preloader .logo .logo-items:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.preloader .logo .logo-items:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.preloader .logo .logo-items:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.preloader .logo .logo-items:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.preloader .logo .logo-items:nth-child(8) {
-  animation-delay: 0.8s;
-}
-.preloader .logo .logo-items:nth-child(9) {
-  animation-delay: 0.9s;
-}
-
-.top-header-area {
-  padding: 35px 10px;
-  top: 0;
-  display: flex;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  background: #02323e;
-  height: 100%;
-  color: #fff;
-  font-size: 20px;
-}
-.top-header-area .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 2vw;
-}
-@media (max-width: 738px) {
-  .top-header-area .container {
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.top-header-area .container .top-header-content .list {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.1vw;
-}
-@media (max-width: 738px) {
-  .top-header-area .container .top-header-content .list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.top-header-area .container .icons .list {
-  gap: 1.1vw;
-  display: flex;
-}
-.top-header-area .container .icons .list i {
-  filter: contrast(0) brightness(100);
-}
-
-.banner-area {
-  position: relative;
-  z-index: 1;
-  padding: 50px 0;
-  background-image: url("https://tf.insomniacafe.org/insotrans/assets/images/banner/banner-bg-1.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 800px;
-}
-@media (max-width: 738px) {
-  .banner-area {
-    height: 1300px;
-    padding: 15px;
-  }
-}
-.banner-area::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to right, #02323e, rgba(0, 0, 0, 0.5));
-  z-index: -1;
-}
-.banner-area .container {
-  position: relative;
-  z-index: 1;
-}
-
 .container {
   width: 100%;
   margin: auto;
@@ -213,6 +32,11 @@ html #root, body #root {
     padding: 0;
     margin: 0;
   }
+}
+.main-content .input-item .banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 .main-content .input-item .banner-content .title {
   font-size: 1.4rem;
@@ -655,7 +479,188 @@ html #root, body #root {
   background-color: #02323e;
 }
 
+html *, body * {
+  scrollbar-width: none;
+  font-synthesis: none;
+  padding: 0;
+  margin: 0;
+}
+html * -webkit-scrollbar, body * -webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, Opera */
+}
+html a, body a {
+  text-decoration: none;
+  color: inherit;
+}
+html li, body li {
+  list-style: none;
+}
+html html, html body, body html, body body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+html body, body body {
+  position: relative; /* Ensure relative positioning */
+  min-height: 100vh; /* Ensure body covers the entire viewport height */
+}
+html #root, body #root {
+  overflow-x: hidden; /* Hide any overflow from the root element */
+  min-height: 100vh; /* Ensure root element covers the entire viewport height */
+}
+
+.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  z-index: 999;
+}
+@keyframes elastic {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20%);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-10%);
+  }
+  90% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.preloader img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+.preloader .logo {
+  display: flex;
+  align-items: center;
+}
+.preloader .logo .logo-items {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 5px;
+  opacity: 0;
+  animation: elastic 1.5s ease-in-out forwards;
+}
+.preloader .logo .logo-items:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.preloader .logo .logo-items:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.preloader .logo .logo-items:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.preloader .logo .logo-items:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.preloader .logo .logo-items:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.preloader .logo .logo-items:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.preloader .logo .logo-items:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.preloader .logo .logo-items:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.preloader .logo .logo-items:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.top-header-area {
+  padding: 35px 10px;
+  top: 0;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  background: #02323e;
+  height: 100%;
+  color: #fff;
+  font-size: 20px;
+}
+.top-header-area .container {
+  display: flex;
+  gap: 2vw;
+}
+@media (max-width: 738px) {
+  .top-header-area .container {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.top-header-area .container .top-header-content .list {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.1vw;
+}
+@media (max-width: 738px) {
+  .top-header-area .container .top-header-content .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.top-header-area .container .icons .list {
+  gap: 1.1vw;
+  display: flex;
+}
+.top-header-area .container .icons .list i {
+  filter: contrast(0) brightness(100);
+}
+
+.banner-area {
+  position: relative;
+  z-index: 1;
+  padding: 50px 0;
+  background-image: url("https://tf.insomniacafe.org/insotrans/assets/images/banner/banner-bg-1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+}
+@media (max-width: 738px) {
+  .banner-area {
+    height: 1300px;
+    padding: 15px;
+  }
+}
+.banner-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #02323e, rgba(0, 0, 0, 0.5));
+  z-index: -1;
+}
+.banner-area .container {
+  position: relative;
+  z-index: 1;
+}
+
 .features-area {
+  max-width: 1320px;
+  margin: auto;
   position: relative;
   top: -10;
   transform: translateY(-60%);
@@ -924,16 +929,15 @@ html #root, body #root {
   align-items: center;
   gap: 10px;
   transition: all 300ms linear;
-  border: 2px solid #fd5523;
-}
-.about .container .content .text .buttons .btn:hover {
-  background-color: #02323e;
-  border: none;
 }
 @media (max-width: 738px) {
   .about .container .content .text .buttons .btn {
-    padding: 15px 25px;
+    padding: 15px 30px;
+    gap: 8px;
   }
+}
+.about .container .content .text .buttons .btn:hover {
+  background-color: #02323e;
 }
 .about .container .content .text .buttons .user-info {
   display: flex;
@@ -1051,6 +1055,10 @@ html #root, body #root {
   font-weight: 600;
 }
 .about .container .content .images .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5vw;
   flex: 3;
 }
 @media (max-width: 738px) {
@@ -1085,6 +1093,7 @@ html #root, body #root {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  gap: 30px;
 }
 @media (max-width: 738px) {
   .services-area .container {
@@ -1110,25 +1119,22 @@ html #root, body #root {
 .services-area .container .services-section-title .sec2 .default-btn {
   background-color: #fd5523;
   color: #fff;
-  padding: 20px 30px;
+  padding: 20px 35px;
   border-radius: 2px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  height: fit-content;
   gap: 10px;
   transition: all 300ms linear;
-  border: 2px solid #fd5523;
-}
-.services-area .container .services-section-title .sec2 .default-btn:hover {
-  background-color: #02323e;
-  border: none;
 }
 @media (max-width: 738px) {
   .services-area .container .services-section-title .sec2 .default-btn {
-    padding: 15px 20px;
-    width: fit-content;
+    padding: 15px 30px;
+    gap: 8px;
   }
+}
+.services-area .container .services-section-title .sec2 .default-btn:hover {
+  background-color: #02323e;
 }
 .services-area .container .services-section-title .sec2 h2 {
   font-size: 36px;

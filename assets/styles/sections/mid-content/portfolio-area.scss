@@ -1,0 +1,19 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+
+
+@mixin portfolio-area-style{
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+  
+  
+  
+    @include sm{
+      padding: 20px 20px;
+  
+    }
+}
