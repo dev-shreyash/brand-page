@@ -54,3 +54,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   rangeSlider.addEventListener('input', updateValue);
 });
+
+//card hover effect
+document.addEventListener('DOMContentLoaded', function () {
+  const boxes = document.querySelectorAll('.box');
+  const mediaQuery = window.matchMedia('(max-width: 768px)'); // Adjust this value based on your breakpoint
+
+  function handleHoverEffect() {
+    if (mediaQuery.matches) {
+      // If the screen is small, make all boxes active
+      boxes.forEach(box => box.classList.add('active'));
+    } else {
+      // For larger screens, handle hover effect and set the first box as active
+      boxes.forEach(box => box.classList.remove('active'));
+      boxes[0].classList.add('active'); // Set the first box as active
+
+      boxes.forEach(box => {
+        box.addEventListener('mouseover', function () {
+          boxes.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    }
+  }
+
+  // Call the function initially to set the correct state
+  handleHoverEffect();
+
+  // Add a listener to handle screen resize
+  mediaQuery.addEventListener('change', handleHoverEffect);
+});

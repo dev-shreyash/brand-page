@@ -23,6 +23,7 @@
 
         .default-btn {
             width: fit-content;
+            height: fit-content;
             @include button-primary;
         }
 
