@@ -10,6 +10,9 @@
 @import './sections/mid-content/about-area.scss';
 @import './sections/mid-content/service-area.scss';
 @import './sections/mid-content/portfolio-area.scss';
+@import './sections/mid-content/pricing-area.scss';
+@import './sections/mid-content/team-area.scss';
+
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 html, body {
@@ -90,4 +93,16 @@ html, body {
 
 .portfolio{
   @include portfolio-area-style;
+}
+
+//pricing area
+
+.pricing-area{
+  @include pricing-area-style;
+}
+
+//team area
+
+.team-area{
+  @include team-area-style;
 }

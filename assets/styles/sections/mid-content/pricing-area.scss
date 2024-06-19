@@ -1,0 +1,346 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+@import '../../components/section-title.scss';
+@import '../../components/switch.scss';
+@import '../../components/button.scss';
+
+
+@mixin pricing-area-style{
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include sm{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .left{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            @include sm{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+    
+
+            .title-btn{
+                display: flex;
+                align-items: start;
+                @include switch-style;
+            }
+
+            .chechbox{
+                width: 90%;
+                
+
+                ul{
+                    width: 90%;
+
+                    @include sm{
+                        width: 100%;
+                    }
+
+                    li {
+                        @include sm{
+                            width: 100%;
+                        }
+                        background-color: #fff;
+                        padding: 10px 20px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        width: 90%;
+                        display: flex;
+                        align-items: center;
+                  
+                        input[type="checkbox"] {
+                          margin-right: 10px;
+                          appearance: none;
+                          width: 20px;
+                          height: 20px;
+                          border: 2px solid #ccc; // Border color when not checked
+                          border-radius: 3px;
+                          position: relative;
+                          cursor: pointer;
+                  
+                          &:checked {
+                            border-color: $primary-color; // Border color when checked
+                            background-color: $primary-color; // Background color when checked
+                  
+                            &::before {
+                              content: '';
+                              position: absolute;
+                              top: 2px;
+                              left: 6px;
+                              width: 5px;
+                              height: 10px;
+                              border: solid #fff;
+                              border-width: 0 2px 2px 0;
+                              transform: rotate(45deg);
+                            }
+                          }
+                        }
+                      }
+                }
+            }
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 65%;
+            gap: 20px;
+            @include sm{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .top{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background-color: #f4f4f4;
+                border-radius: 5px;
+                padding: 20px;
+                @include sm{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                }
+
+                .left{
+                    padding: 0;
+                    margin: 0;
+                    gap: 0;
+                    align-items: start;
+
+                    @include sm{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        padding: 0;
+                        gap: 0;
+                    }
+                 
+                    .title{
+                        display: flex;
+                        gap: 10px;
+                        margin: auto 0;
+
+                        h2{
+                            color: $secondary-color;
+                            margin-top: 0;
+                            font-size: 18px;
+
+
+                            @include sm{
+                                margin: 0;
+                                padding: 0;
+                                font-size: 18px;
+                            }
+
+                        }
+
+                        span{
+                            margin: 0;
+                            padding: 0;
+                            color: $primary-color;
+                            
+                        }
+                    }
+
+                    .prices{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        
+
+                        h2{
+                            font-size: 44px;
+                            padding: 0;
+                            margin: 0;
+
+                            @include sm{
+                                font-size: 24px;
+                            }
+
+                        }
+                        span{
+                            position: relative;
+                            bottom: -10px;
+                            align-items: end;
+                            color: $secondary-color;
+                            font-size: 18px;
+                            @include sm{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+
+                .right{
+                    display: flex;
+                    align-items: end;
+                    @include sm{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        padding: 0;
+                        gap: 0;
+                    }
+
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        li{
+                           // margin-bottom: 10px;
+                            padding: 5px;
+                            color: gray;
+                            @include sm{
+                                padding: 0;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            .bottom{
+                
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    background-color: #f4f4f4;
+                    border-radius: 5px;
+                    padding: 20px;
+                    @include sm{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        width: 100%;
+                    }
+    
+                    .left{
+                        padding: 0;
+                        margin: 0;
+                        gap: 0;
+                        align-items: start;
+    
+                        @include sm{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            padding: 0;
+                            gap: 0;
+                        }
+                     
+                        .title{
+                            display: flex;
+                            gap: 10px;
+                            margin: auto 0;
+    
+                            h2{
+                                color: $secondary-color;
+                                margin-top: 0;
+                                font-size: 18px;
+    
+    
+                                @include sm{
+                                    margin: 0;
+                                    padding: 0;
+                                    font-size: 18px;
+                                }
+    
+                            }
+    
+                            span{
+                                margin: 0;
+                                padding: 0;
+                                color: $primary-color;
+                                
+                            }
+                        }
+    
+                        .prices{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            
+    
+                            h2{
+                                font-size: 44px;
+                                padding: 0;
+                                margin: 0;
+    
+                                @include sm{
+                                    font-size: 24px;
+                                }
+    
+                            }
+                            span{
+                                position: relative;
+                                bottom: -10px;
+                                align-items: end;
+                                color: $secondary-color;
+                                font-size: 18px;
+                                @include sm{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .btn{
+                        margin-top: 15px;
+                        @include button-primary;
+                    }
+    
+                    .right{
+                        display: flex;
+                        align-items: end;
+                        @include sm{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            padding: 0;
+                            gap: 0;
+                        }
+    
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            li{
+                               // margin-bottom: 10px;
+                                padding: 5px;
+                                color: gray;
+                                @include sm{
+                                    padding: 0;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                
+            }
+           
+        }
+
+    }
+}

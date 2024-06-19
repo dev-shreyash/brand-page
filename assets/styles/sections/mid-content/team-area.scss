@@ -1,0 +1,187 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+@import '../../components/section-title.scss';
+
+
+
+
+
+@mixin team-area-style {
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .team-section-title {
+            @include section-title-style;
+        }
+
+        .team-content {
+            display: flex;
+            justify-content: space-between;
+
+            @include sm {
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                gap: 25px;
+            }
+
+
+            .social-card {
+                position: relative;
+
+                @include sm {
+                    width: 100%;
+                }
+
+                .image {
+                    transition: $smooth;
+                    height: 320px;
+                    border-radius: 5px;
+                    position: relative;
+                    overflow: hidden;
+
+                    @include sm {
+                        width: 100%;
+                    }
+
+
+
+                    &:hover {
+                        background-size: cover;
+                        background-position: center;
+                        transition: $smooth;
+
+                        //scale: 1.1;
+
+
+                        .social-links {
+                            transition: $smooth;
+                            transform: translateY(-100%);
+                            opacity: 1;
+                            z-index: 9;
+
+                            &::before {
+                                transition: $smooth;
+                                height: 100%;
+                                // transform: translateY(-100%);
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: linear-gradient(to top, $secondary-color, rgba(0, 0, 0, 0.001)); // Adjust the gradient as needed
+                                z-index: 1; // Place the gradient behind content
+                            }
+
+
+
+
+                        }
+
+                        @keyframes bg-color-change {
+
+                            0% {
+                                background: linear-gradient(1deg, #ff7f5f00, #feb47b00);
+                                /* Initial Gradient background */
+                            }
+
+                            100% {
+                                background: linear-gradient(-10deg, $secondary-color, #feb47b00);
+                                /* Final Gradient background */
+                            }
+                        }
+                        img {
+                            transform: scale(1.1);
+                            transition: transform 0.3s ease; // Smooth transition for image scaling
+                        }
+                    }
+
+                    img {
+                        height: 100%;
+                        width: 300px;
+                        background-size: contain;
+                        background-position: center;
+                        z-index: -2;
+                        transition: transform 0.3s ease; // Smooth transition for image scaling
+
+
+                        @include sm {
+                            width: 100%;
+                        }
+
+
+                    }
+
+
+                    .social-links {
+                        opacity: 0;
+                        height: 100%;
+                        transform: translateY(-100%);
+                        //position: absolute;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: end;
+                        padding: 20px;
+                        background-color: liner-g;
+                        z-index: 3;
+
+                        .name {
+                            transition: $smooth;
+                            color: $white;
+                            z-index: 3;
+
+                            h2 {
+                                transition: $smooth;
+
+                                font-size: 20px;
+                                font-weight: bold;
+
+                                &:hover {
+                                    color: $primary-color;
+                                }
+                            }
+                        }
+
+                        .icons {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            z-index: 3;
+
+                            i {
+                                padding: 10px;
+                                border-radius: 50%;
+                                background-color: rgba($white, 0.3);
+                                color: $white;
+                                font-size: 25px;
+                                cursor: pointer;
+                                transition: $smooth;
+
+                                &:hover {
+                                    background-color: $primary-color;
+                                }
+
+                                &:nth-child(5) {
+                                    background-color: $primary-color;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
