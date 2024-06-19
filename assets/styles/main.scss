@@ -12,6 +12,10 @@
 @import './sections/mid-content/portfolio-area.scss';
 @import './sections/mid-content/pricing-area.scss';
 @import './sections/mid-content/team-area.scss';
+@import './sections/mid-content/testimonial-area.scss';
+@import './sections/mid-content/faq-area.scss';
+
+
 
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
@@ -105,4 +109,16 @@ html, body {
 
 .team-area{
   @include team-area-style;
+}
+
+//testimonial area
+
+.testimonial-area{
+  @include testimonial-area-style;
+}
+
+//faq-area
+
+.faq-area{
+  @include faq-area-style;
 }

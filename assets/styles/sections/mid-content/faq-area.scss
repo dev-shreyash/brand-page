@@ -1,0 +1,116 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+@import '../../components/section-title.scss';
+
+@mixin faq-area-style {
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include sm {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .image {
+            width: 100%;
+            height: 600px;
+            background-image: url("https://tf.insomniacafe.org/insotrans/assets/images/faq-bg1.jpg");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .faq-content {
+            position: absolute;
+            background-color: #fff;
+            padding: 35px;
+            transform: translateX(88px) translateY(70px);
+            border-radius: 5px;
+
+
+            .faq-section-title {
+                @include section-title-style;
+            }
+
+            .faq-accordion {
+                height: 100%;
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            $primary-color: #007bff; // Adjust as needed
+            $accordion-bg: #f1f1f1;
+            $accordion-hover-bg: #e2e2e2;
+            $accordion-border-color: #ccc;
+
+            .accordion-item {
+                margin-bottom: 10px;
+                //  border: 1px solid $accordion-border-color;
+                border-radius: 5px;
+                overflow: hidden;
+
+                .accordion-button {
+                    width: 100%;
+                    background-color: #f4f4f4;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 15px;
+                    text-align: left;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    transition: background-color 0.3s ease;
+                    font-weight: 700;
+
+                    .accordion-title {
+                        font-size: 18px;
+                    }
+
+                    i.fas {
+                        transition: transform 0.3s ease;
+                    }
+
+                    &:hover {
+                        background-color: $accordion-hover-bg;
+                    }
+                }
+
+                .accordion-content {
+                    height: 100%;
+                    padding: 15px;
+                    display: none;
+                    background-color: #f4f4f4;
+                    border-top: 1px solid $accordion-border-color;
+
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                &.active {
+                    .accordion-content {
+                        display: block;
+                    }
+
+                    .accordion-button i.fas {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -13,6 +13,9 @@
     margin: auto;
     height: 100%;
     padding: 20px 40px;
+    @include sm{
+        padding: 20px 15px;
+    }
 
     .container {
         display: flex;
@@ -158,6 +161,12 @@
                             gap: 10px;
                             z-index: 3;
 
+                            .icon-circle-active{
+                                i{
+                                   background-color: $primary-color !important;
+                                }
+                         }
+
                             i {
                                 padding: 10px;
                                 border-radius: 50%;
@@ -174,7 +183,12 @@
                                 &:nth-child(5) {
                                     background-color: $primary-color;
                                 }
+
+                            
                             }
+                          
+
+                           
 
                         }
                     }

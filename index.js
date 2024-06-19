@@ -1,3 +1,7 @@
+
+// import $ from 'jquery';
+// import 'slick-carousel';
+
 // //css imports automatic
 
 // const fs = require('fs');
@@ -75,12 +79,30 @@ document.addEventListener('DOMContentLoaded', function () {
           this.classList.add('active');
         });
       });
-    }
-  }
+    };
+  };
+});
 
-  // Call the function initially to set the correct state
-  handleHoverEffect();
+  //slider
 
-  // Add a listener to handle screen resize
-  mediaQuery.addEventListener('change', handleHoverEffect);
+
+
+//
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionItems = document.querySelectorAll('.accordion-item');
+
+  accordionItems.forEach(item => {
+      const button = item.querySelector('.accordion-button');
+      button.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+
+          // Close all active items
+          accordionItems.forEach(i => i.classList.remove('active'));
+
+          // If it was not active, make it active
+          if (!isActive) {
+              item.classList.add('active');
+          }
+      });
+  });
 });

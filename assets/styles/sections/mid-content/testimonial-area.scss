@@ -1,0 +1,97 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+@import '../../components/section-title.scss';
+
+
+@mixin testimonial-area-style{
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+    margin-top: 20px;
+
+    @include sm{
+        padding: 20px 15px;
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+
+        .testimonial-section-title{
+            @include section-title-style;
+        }
+        .testimonial-content{
+            max-width: 50%;
+
+            @include sm{
+                max-width: 100%;
+            }
+
+            .slider{
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                flex-wrap: no-wrap;
+                width: 100%;
+                .content{
+                    width: 100%;
+                    position: relative;
+                    gap: 10px;
+                    .rating{
+                        h3{
+
+                            i{
+                                font-size: 16px;
+                                color: $primary-color;
+                            }
+                        }
+
+                    }
+                    .message{
+                        color: rgba($black, 0.6);
+                       // line-height: 5px;
+                       line-height: 2
+
+                    }
+                    .client{
+                        display: flex;
+                        margin-top: 10px;
+                        justify-content: space-between;
+                        align-items: center;
+                        .title{
+
+                            .user-image{
+                                img{
+                                    width: 60px;
+                                }
+                            }
+                            .name{
+                                h2{
+                                    padding: 0;
+                                    margin: 0;
+                                }
+                            }
+                            display: flex; 
+                            align-items: center;
+                            gap: 10px;
+                        }
+                        .comma{
+                            margin-right: 20px;
+                            i{
+                                font-size: 70px;
+                                color: #ddd4d4;
+                            }
+                        }
+                    }
+                
+                }
+            }
+          
+        }
+    }
+}

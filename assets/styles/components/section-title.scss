@@ -26,6 +26,7 @@
             height: fit-content;
             @include button-primary;
         }
+       
 
         h2 {
             font-size: 36px;
@@ -35,6 +36,38 @@
                 font-size: 26px;
             }
         }
+    }
+    .arrow-btn{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: end;
+
+        .left-btn{
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: #f4f4f4;
+            transition: $smooth;
+
+            &:hover{
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+        .right-btn{
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: #f4f4f4;
+            transition: $smooth;
+
+            &:hover{
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+        
     }
 
     .section-title {
@@ -46,6 +79,7 @@
             align-items: center;
             font-size: 20px;
             text-transform: uppercase;
+            color: $primary-color;
 
             .line {
                 width: 16px;
