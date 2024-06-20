@@ -2,8 +2,7 @@
 @import '../../responsive.scss';
 @import '../../components/section-title.scss';
 
-
-@mixin testimonial-area-style{
+@mixin testimonial-area-style {
     max-width: 1320px;
     display: flex;
     align-items: center;
@@ -12,86 +11,110 @@
     padding: 20px 40px;
     margin-top: 20px;
 
-    @include sm{
+    @include sm {
         padding: 20px 15px;
     }
 
-    .container{
+    .container {
         display: flex;
         justify-content: space-between;
         gap: 20px;
 
-
-        .testimonial-section-title{
+        .testimonial-section-title {
             @include section-title-style;
         }
-        .testimonial-content{
-            max-width: 50%;
 
-            @include sm{
+        .testimonial-content {
+            max-width: 50%;
+            overflow: hidden;
+
+            @include sm {
                 max-width: 100%;
             }
 
-            .slider{
+            .slider {
                 display: flex;
-                flex-direction: row;
-                margin: auto;
-                flex-wrap: no-wrap;
+                transition: transform 0.3s ease-in-out;
                 width: 100%;
-                .content{
-                    width: 100%;
+                .content {
+                    min-width: 100%;
                     position: relative;
                     gap: 10px;
-                    .rating{
-                        h3{
 
-                            i{
+                    .rating {
+                        h3 {
+                            i {
                                 font-size: 16px;
                                 color: $primary-color;
                             }
                         }
-
                     }
-                    .message{
+
+                    .message {
                         color: rgba($black, 0.6);
-                       // line-height: 5px;
-                       line-height: 2
-
+                        line-height: 2;
                     }
-                    .client{
+
+                    .client {
                         display: flex;
                         margin-top: 10px;
                         justify-content: space-between;
                         align-items: center;
-                        .title{
 
-                            .user-image{
-                                img{
+                        .title {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            .user-image {
+                                img {
                                     width: 60px;
                                 }
                             }
-                            .name{
-                                h2{
+
+                            .name {
+                                h2 {
                                     padding: 0;
                                     margin: 0;
                                 }
                             }
-                            display: flex; 
-                            align-items: center;
-                            gap: 10px;
                         }
-                        .comma{
+
+                        .comma {
                             margin-right: 20px;
-                            i{
+                            i {
                                 font-size: 70px;
                                 color: #ddd4d4;
                             }
                         }
                     }
-                
                 }
             }
-          
+        }
+
+        .arrow-btn {
+            display: flex;
+            gap: 10px;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: $primary-color;
+                color: $white;
+                border-radius: 50%;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: darken($primary-color, 10%);
+                }
+
+                i {
+                    font-size: 16px;
+                }
+            }
         }
     }
 }

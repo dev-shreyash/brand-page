@@ -12,6 +12,11 @@
     margin: auto;
     height: 100%;
     padding: 20px 40px;
+
+    @include sm{
+        padding: 20px 10px;
+
+    }
   
     .container{
         display: flex;
@@ -43,6 +48,13 @@
                 display: flex;
                 align-items: start;
                 @include switch-style;
+
+                h3{
+                    margin: 0;
+                    padding: 0;
+
+                   
+                }
             }
 
             .chechbox{

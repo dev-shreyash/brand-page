@@ -4,6 +4,29 @@
 
 @mixin navbar-style {
   z-index: 99;
+  transition: all 0.3s ease;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    transition: $smooth;
+
+    .nav-container {
+      padding: 0 20px;
+      max-width: 1300px;
+
+      .nav-list {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        gap: 15px;
+      }
+    }
+  }
 
   .nav-container {
     display: flex;
@@ -14,38 +37,34 @@
     padding: 20px 0;
 
     @include sm {
-      //flex-direction: row;
       justify-content: space-between;
       align-items: start;
       padding: 20px;
     }
 
-    .top{
+    .top {
+      @include sm {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: auto;
+        justify-content: space-between !important;
+      }
 
-        @include sm{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            
-            justify-content: space-between !important;
-        }
-        
-
-        .nav-mobile{
-            font-weight: 700;
-            font-size: 2rem;
-        }
+      .nav-mobile {
+        font-weight: 700;
+        font-size: 2rem;
+      }
     }
 
     .nav-mobile {
-        display: none;
-        cursor: pointer;
+      display: none;
+      cursor: pointer;
 
-        @include sm {
-          display: block;
-        }
+      @include sm {
+        display: block;
       }
-
+    }
 
     nav {
       display: flex;
@@ -53,7 +72,11 @@
       align-items: center;
       position: relative;
 
-   
+      @include sm {
+        margin: auto;
+        background-color: #fff;
+      }
+
       .nav-list {
         display: flex;
         align-items: center;
@@ -66,16 +89,41 @@
         @include sm {
           flex-direction: column;
           display: none;
+          position: absolute;
+          z-index: 99;
+          width: 400px;
+          margin-top: auto;
+          margin-right: -40px !important;
+          align-items: start;
+          padding: 20px;
+          background-color: #fff;
+          transform: translateX(-50vw) translateY(10vw);
+          text-transform: none;
+          transition: $smooth;
+
           &.open {
-            display: flex; 
+            transition: $smooth;
+            display: flex;
             align-items: flex-start;
+          }
+
+          li {
+            padding: 10px 0;
+            width: 100%;
+            border-bottom: 1px solid rgba($secondary-color, 0.3);
+          }
+
+          .nav-search {
+            display: none;
+          }
+
+          .btn {
+            display: none;
           }
         }
 
-       
-
         li {
-          position: relative; 
+          position: relative;
           transition: $smooth;
           text-align: left;
 

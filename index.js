@@ -45,6 +45,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.querySelector('.navigation');
+  const stickyClass = 'sticky';
+  const shrinkOn = 200; 
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > shrinkOn) {
+          navbar.classList.add(stickyClass);
+      } else {
+          navbar.classList.remove(stickyClass);
+      }
+  });
+});
+
+
 //slider value
 document.addEventListener('DOMContentLoaded', (event) => {
   const rangeSlider = document.querySelector('.range-slider-range');
@@ -62,15 +76,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 //card hover effect
 document.addEventListener('DOMContentLoaded', function () {
   const boxes = document.querySelectorAll('.box');
-  const mediaQuery = window.matchMedia('(max-width: 768px)'); // Adjust this value based on your breakpoint
+  const mediaQuery = window.matchMedia('(max-width: 768px)'); 
 
   function handleHoverEffect() {
     if (mediaQuery.matches) {
-      boxes.forEach(box => box.classList.add('active'));
+      boxes.forEach(box => box.classList.add('active-sm'));
+      console.log("match");
     } else {
-      // For larger screens, handle hover effect and set the first box as active
       boxes.forEach(box => box.classList.remove('active'));
-      boxes[0].classList.add('active'); // Set the first box as active
+      boxes[0].classList.add('active'); 
 
       boxes.forEach(box => {
         box.addEventListener('mouseover', function () {
@@ -78,11 +92,62 @@ document.addEventListener('DOMContentLoaded', function () {
           this.classList.add('active');
         });
       });
-    };
-  };
+    }
+  }
+
+  handleHoverEffect();
+
+  mediaQuery.addListener(handleHoverEffect);
 });
 
+
   //slider
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.testimonial-content .slider');
+    const contents = document.querySelectorAll('.testimonial-content .content');
+    const prevButton = document.querySelector('.arrow-btn .left-btn');
+    const nextButton = document.querySelector('.arrow-btn .right-btn');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % contents.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + contents.length) % contents.length;
+        updateSlider();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 3000);
+       }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    nextButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        nextSlide();
+    });
+
+    prevButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        prevSlide();
+    });
+
+    slider.addEventListener('mouseenter', stopAutoSlide);
+    slider.addEventListener('mouseleave', startAutoSlide);
+
+    updateSlider();
+    startAutoSlide();
+});
 
 
 
