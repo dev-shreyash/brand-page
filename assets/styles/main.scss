@@ -15,6 +15,8 @@
 @import './sections/mid-content/testimonial-area.scss';
 @import './sections/mid-content/faq-area.scss';
 @import './sections/mid-content/blog-area.scss';
+@import './sections/mid-content/partner-area.scss';
+
 
 
 
@@ -128,4 +130,10 @@ html, body {
 //blog area
 .blog-area{
   @include blog-area-style;
+}
+
+//partner-area
+
+.partner-area{
+  @include partner-area-style;
 }

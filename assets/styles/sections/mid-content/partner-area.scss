@@ -1,0 +1,118 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+@import '../../components/section-title.scss';
+
+
+@mixin partner-area-style{
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+    margin-top: 60px;
+
+    @include sm{
+        padding: 10px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+        transition: height 0.3s ease; // Smooth height transition
+    
+        .partner-section-title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include section-title-style;
+        }
+
+        .partner-content{
+            display: flex;
+            justify-content: space-between;
+            .partner-list{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                //gap: 30px;
+
+                @include sm{
+                    flex-direction: column;
+
+                }
+
+                .item{
+                    display: flex;
+                    align-items: center;
+                    margin: auto;
+                    padding: 40px 50px;
+                    min-height: 100px;
+                    min-width: 180px;
+                    justify-content: center;
+                    @include sm{
+                        width: 380px;
+                        height: 150px;
+                        flex-direction: column;
+                        border: 1px solid #bbbbbb;
+
+                       
+
+                    }
+
+                    transition: $smooth;
+                    &:hover{
+                        transition: $smooth;
+
+                        background-color: $primary-color;
+
+                        @include sm{
+                            border: 1px solid $primary-color;
+                        }
+                        
+                        img{
+                            filter: invert(0);
+                        }
+                    }
+
+                    img{
+                        transition: $smooth;
+
+                        cursor: pointer;
+                        filter: invert(0.7);
+                    }
+                    &:nth-child(1){
+                        border-left: 1px solid #bbbbbb;
+                        border-top: 1px solid #bbbbbb;
+                        border-bottom: 1px solid #bbbbbb;
+                    }
+
+
+                    &:nth-child(2){
+                        background-color: $primary-color;
+                        border-top: 1px solid $primary-color;
+                        border-bottom: 1px solid $primary-color;
+                        img{
+                            filter: invert(0);
+                        }
+                    }
+                    &:nth-child(3){
+                        border-top: 1px solid #bbbbbb;
+                        border-bottom: 1px solid #bbbbbb;
+                    }
+                    &:nth-child(4){
+                        border-right: 1px solid #bbbbbb;
+                        border-top: 1px solid #bbbbbb;
+                        border-bottom: 1px solid #bbbbbb;
+                    }
+                }
+            }
+        }
+    
+    
+    }
+
+}

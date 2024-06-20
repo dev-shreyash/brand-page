@@ -81,21 +81,36 @@
                 width: 400px;
                 align-items: center;
                 display: flex;
-                color: rgba($black, 0.7);
+                color: rgba($secondary-color, 0.5);
 
                 .blog-content{
 
                     padding: 10px;
                     border-right: 1px solid #00000065;
 
+                    .blog-poster{
+                        font-size: 14px;
+                    }
+
                     .blog-title{
                         transition:$smooth ;
 
+                        h2{
+                            font-weight: 700;
+                            font-size: 18px;
+                            padding: 0;
+                            margin: 5px 0;
+                        }
                         color: $secondary-color;
 
                         &:hover{
                             color: $primary-color;
                         }
+                    }
+
+                    .blog-desc{
+                        font-weight: bold;
+                        font-size: 14px;
                     }
                 }
                 .blog-date{
@@ -105,7 +120,7 @@
 
                     h2{
                         transition:$smooth ;
-
+                        color: rgba($secondary-color, 1);
                         padding: 0;
                         margin: 0;
                     }
