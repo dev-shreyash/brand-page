@@ -14,6 +14,8 @@
 @import './sections/mid-content/team-area.scss';
 @import './sections/mid-content/testimonial-area.scss';
 @import './sections/mid-content/faq-area.scss';
+@import './sections/mid-content/blog-area.scss';
+
 
 
 
@@ -121,4 +123,9 @@ html, body {
 
 .faq-area{
   @include faq-area-style;
+}
+
+//blog area
+.blog-area{
+  @include blog-area-style;
 }

@@ -2302,6 +2302,7 @@ html #root, body #root {
 @media (max-width: 738px) {
   .team-area .container .team-content .social-card .image {
     width: 100%;
+    height: 400px;
   }
 }
 .team-area .container .team-content .social-card .image:hover {
@@ -2578,24 +2579,37 @@ html #root, body #root {
   height: 100%;
   padding: 20px 40px;
 }
+@media (max-width: 738px) {
+  .faq-area {
+    padding: 10px;
+  }
+}
 .faq-area .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+  min-height: 700px;
+  transition: height 0.3s ease;
 }
 @media (max-width: 738px) {
   .faq-area .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 }
-.faq-area .container .image {
+.faq-area .container .faq-image {
   width: 100%;
   height: 600px;
   background-image: url("https://tf.insomniacafe.org/insotrans/assets/images/faq-bg1.jpg");
   background-size: cover;
   background-position: center;
+}
+@media (max-width: 738px) {
+  .faq-area .container .faq-image {
+    width: 100%;
+  }
 }
 .faq-area .container .faq-content {
   position: absolute;
@@ -2603,6 +2617,14 @@ html #root, body #root {
   padding: 35px;
   transform: translateX(88px) translateY(70px);
   border-radius: 5px;
+  margin-top: 10px;
+}
+@media (max-width: 738px) {
+  .faq-area .container .faq-content {
+    width: 400px;
+    padding: 15px;
+    transform: translateX(28px) translateY(140px);
+  }
 }
 @media (max-width: 738px) {
   .faq-area .container .faq-content .faq-section-title {
@@ -2699,51 +2721,259 @@ html #root, body #root {
   background-color: #fd5523;
 }
 .faq-area .container .faq-content .faq-accordion {
-  height: 100%;
   width: 600px;
   margin: 0 auto;
 }
-.faq-area .container .faq-content .accordion-item {
+@media (max-width: 738px) {
+  .faq-area .container .faq-content .faq-accordion {
+    margin-left: 10px;
+    width: 350px;
+    padding: 0;
+  }
+}
+.faq-area .container .faq-content .faq-accordion .accordion-item {
   margin-bottom: 10px;
   border-radius: 5px;
   overflow: hidden;
 }
-.faq-area .container .faq-content .accordion-item .accordion-button {
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-button {
   width: 100%;
-  background-color: #f4f4f4;
+  background-color: #fff;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 15px;
+  padding: 15px 15px 15px 0;
   text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s ease;
   font-weight: 700;
+  border: 1px solid rgba(2, 50, 62, 0.4);
 }
-.faq-area .container .faq-content .accordion-item .accordion-button .accordion-title {
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-button .line {
+  z-index: 4;
+  background-color: #fd5523;
+  width: 3px;
+  height: 20px;
+  margin: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-button .accordion-title {
+  flex: 1;
   font-size: 18px;
 }
-.faq-area .container .faq-content .accordion-item .accordion-button i.fas {
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-button i.fas {
+  font-size: 18px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 50px;
   transition: transform 0.3s ease;
 }
-.faq-area .container .faq-content .accordion-item .accordion-button:hover {
-  background-color: #e2e2e2;
-}
-.faq-area .container .faq-content .accordion-item .accordion-content {
-  height: 100%;
-  padding: 15px;
-  display: none;
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-button:hover {
   background-color: #f4f4f4;
-  border-top: 1px solid #ccc;
 }
-.faq-area .container .faq-content .accordion-item .accordion-content p {
-  margin: 0;
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background-color: #f4f4f4;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
-.faq-area .container .faq-content .accordion-item.active .accordion-content {
-  display: block;
+.faq-area .container .faq-content .faq-accordion .accordion-item .accordion-content p {
+  margin: 15px 0;
 }
-.faq-area .container .faq-content .accordion-item.active .accordion-button i.fas {
+.faq-area .container .faq-content .faq-accordion .accordion-item.active .accordion-content {
+  border-top: 1px solid rgba(2, 50, 62, 0.4);
+  max-height: 200px;
+  padding: 15px;
+}
+.faq-area .container .faq-content .faq-accordion .accordion-item.active .accordion-button i.fas {
   transform: rotate(45deg);
+}
+.faq-area .container .faq-content .faq-accordion .accordion-item.active .accordion-button {
+  background-color: #f4f4f4;
+  border: none;
+}
+
+.blog-area {
+  max-width: 1320px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+  padding: 20px 40px;
+  margin-top: 60px;
+}
+@media (max-width: 738px) {
+  .blog-area {
+    padding: 10px;
+  }
+}
+.blog-area .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  transition: height 0.3s ease;
+}
+@media (max-width: 738px) {
+  .blog-area .container .blog-section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.blog-area .container .blog-section-title .sec2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+}
+@media (max-width: 738px) {
+  .blog-area .container .blog-section-title .sec2 {
+    flex-direction: column;
+  }
+}
+.blog-area .container .blog-section-title .sec2 .default-btn {
+  width: fit-content;
+  height: fit-content;
+  background-color: #fd5523;
+  color: #fff;
+  padding: 20px 35px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 300ms linear;
+  font-size: 18px;
+  font-weight: 700;
+}
+@media (max-width: 738px) {
+  .blog-area .container .blog-section-title .sec2 .default-btn {
+    padding: 15px 30px;
+    gap: 8px;
+    font-size: 16px;
+  }
+}
+.blog-area .container .blog-section-title .sec2 .default-btn:hover {
+  background-color: #02323e;
+}
+.blog-area .container .blog-section-title .sec2 h2 {
+  font-size: 36px;
+  padding: 0;
+}
+@media (max-width: 738px) {
+  .blog-area .container .blog-section-title .sec2 h2 {
+    font-size: 26px;
+  }
+}
+.blog-area .container .blog-section-title .arrow-btn {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+.blog-area .container .blog-section-title .arrow-btn .left-btn {
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  transition: all 300ms linear;
+}
+.blog-area .container .blog-section-title .arrow-btn .left-btn:hover {
+  background-color: #fd5523;
+  color: #fff;
+}
+.blog-area .container .blog-section-title .arrow-btn .right-btn {
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  transition: all 300ms linear;
+}
+.blog-area .container .blog-section-title .arrow-btn .right-btn:hover {
+  background-color: #fd5523;
+  color: #fff;
+}
+.blog-area .container .blog-section-title .section-title .sub-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fd5523;
+}
+.blog-area .container .blog-section-title .section-title .sub-title .line {
+  width: 16px;
+  height: 6px;
+  border-radius: 30px;
+  background-color: #fd5523;
+}
+.blog-area .container .blog-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 738px) {
+  .blog-area .container .blog-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.blog-area .container .blog-container .blog-item {
+  transition: all 300ms linear;
+}
+.blog-area .container .blog-container .blog-item:hover .blog-details .blog-date {
+  transition: all 300ms linear;
+}
+.blog-area .container .blog-container .blog-item:hover .blog-details .blog-date h2 {
+  color: #fd5523;
+}
+.blog-area .container .blog-container .blog-item .blog-image {
+  width: 400px;
+  overflow: hidden;
+}
+.blog-area .container .blog-container .blog-item .blog-image img {
+  transition: all 300ms linear;
+  background-size: cover;
+  background-position: center;
+  width: 400px;
+}
+.blog-area .container .blog-container .blog-item .blog-image:hover {
+  transition: all 300ms linear;
+}
+.blog-area .container .blog-container .blog-item .blog-image:hover img {
+  scale: 1.1;
+}
+.blog-area .container .blog-container .blog-item .blog-details {
+  width: 400px;
+  align-items: center;
+  display: flex;
+  color: rgba(0, 0, 0, 0.7);
+}
+.blog-area .container .blog-container .blog-item .blog-details .blog-content {
+  padding: 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.3960784314);
+}
+.blog-area .container .blog-container .blog-item .blog-details .blog-content .blog-title {
+  transition: all 300ms linear;
+  color: #02323e;
+}
+.blog-area .container .blog-container .blog-item .blog-details .blog-content .blog-title:hover {
+  color: #fd5523;
+}
+.blog-area .container .blog-container .blog-item .blog-details .blog-date {
+  position: relative;
+  top: -30px;
+  padding: 10px;
+}
+.blog-area .container .blog-container .blog-item .blog-details .blog-date h2 {
+  transition: all 300ms linear;
+  padding: 0;
+  margin: 0;
 }

@@ -1,7 +1,9 @@
+// Import necessary styles
 @import '../../variable.scss';
 @import '../../responsive.scss';
 @import '../../components/section-title.scss';
 
+// Mixin for the FAQ area style
 @mixin faq-area-style {
     max-width: 1320px;
     display: flex;
@@ -10,25 +12,34 @@
     height: 100%;
     padding: 20px 40px;
 
+    @include sm{
+        padding: 10px;
+    }
+
     .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
+        min-height: 700px;
+        transition: height 0.3s ease; // Smooth height transition
 
         @include sm {
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
-
-        .image {
+        .faq-image {
             width: 100%;
             height: 600px;
             background-image: url("https://tf.insomniacafe.org/insotrans/assets/images/faq-bg1.jpg");
             background-size: cover;
             background-position: center;
 
+            @include sm{
+                width: 100%;
+            }
         }
 
         .faq-content {
@@ -37,80 +48,104 @@
             padding: 35px;
             transform: translateX(88px) translateY(70px);
             border-radius: 5px;
+            margin-top: 10px;
 
+            @include sm{
+                width: 400px;
+                padding: 15px;
+                transform: translateX(28px) translateY(140px);
+
+            }
 
             .faq-section-title {
                 @include section-title-style;
             }
 
             .faq-accordion {
-                height: 100%;
                 width: 600px;
                 margin: 0 auto;
-            }
-
-            $primary-color: #007bff; // Adjust as needed
-            $accordion-bg: #f1f1f1;
-            $accordion-hover-bg: #e2e2e2;
-            $accordion-border-color: #ccc;
-
-            .accordion-item {
-                margin-bottom: 10px;
-                //  border: 1px solid $accordion-border-color;
-                border-radius: 5px;
-                overflow: hidden;
-
-                .accordion-button {
-                    width: 100%;
-                    background-color: #f4f4f4;
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    padding: 15px;
-                    text-align: left;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    transition: background-color 0.3s ease;
-                    font-weight: 700;
-
-                    .accordion-title {
-                        font-size: 18px;
-                    }
-
-                    i.fas {
-                        transition: transform 0.3s ease;
-                    }
-
-                    &:hover {
-                        background-color: $accordion-hover-bg;
-                    }
+                @include sm{
+                    margin-left: 10px;
+                    width: 350px;
+                    padding: 0;
                 }
 
-                .accordion-content {
-                    height: 100%;
-                    padding: 15px;
-                    display: none;
-                    background-color: #f4f4f4;
-                    border-top: 1px solid $accordion-border-color;
+                .accordion-item {
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    overflow: hidden;
 
+                    .accordion-button {
+                        width: 100%;
+                        background-color: #fff;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        padding: 15px 15px 15px 0;
+                        text-align: left;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        transition: background-color 0.3s ease;
+                        font-weight: 700;
+                        border: 1px solid rgba($secondary-color, 0.4);
 
-                    p {
-                        margin: 0;
+                        .line {
+                            z-index: 4;
+                            background-color: $primary-color;
+                            width: 3px;
+                            height: 20px;
+                            margin: auto;
+                            margin-right: 10px;
+                            border-radius: 5px;
+                        }
+
+                        .accordion-title {
+                            flex: 1;
+                            font-size: 18px;
+                        }
+
+                        i.fas {
+                            font-size: 18px;
+                            background: #ffffff;
+                            padding: 8px;
+                            border-radius: 50px;
+                            transition: transform 0.3s ease;
+                        }
+
+                        &:hover {
+                            background-color: #f4f4f4;
+                        }
                     }
-                }
 
-                &.active {
                     .accordion-content {
-                        display: block;
+                        max-height: 0;
+                        overflow: hidden;
+                        padding: 0 15px;
+                        background-color: #f4f4f4;
+                        transition: max-height 0.3s ease, padding 0.3s ease;
+
+                        p {
+                            margin: 15px 0;
+                        }
                     }
 
-                    .accordion-button i.fas {
+                    &.active .accordion-content {
+                        border-top: 1px solid rgba($secondary-color, 0.4);
+                        max-height: 200px; // Adjust based on your content
+                        padding: 15px;
+                    }
+
+                    &.active .accordion-button i.fas {
                         transform: rotate(45deg);
+                    }
+
+                    &.active .accordion-button {
+                        background-color: #f4f4f4;
+                        border: none;
                     }
                 }
             }
         }
     }
-
 }

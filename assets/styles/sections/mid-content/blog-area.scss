@@ -1,0 +1,117 @@
+@import '../../variable.scss';
+@import '../../responsive.scss';
+@import '../../components/section-title.scss';
+
+
+@mixin blog-area-style{
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 20px 40px;
+    margin-top: 60px;
+
+    @include sm{
+        padding: 10px;
+    }
+
+    .container {
+        display: flex;
+       // align-items: center;
+       flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+        transition: height 0.3s ease; // Smooth height transition
+
+        .blog-section-title{
+            @include section-title-style;
+        }
+
+        .blog-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include sm{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .blog-item{
+                transition:$smooth ;
+
+            &:hover{
+
+                .blog-details{
+
+                    .blog-date{
+                        transition:$smooth ;
+
+                        h2{
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+
+            .blog-image{
+                width: 400px;
+                overflow: hidden;
+                img{
+                    transition: $smooth;
+
+                    background-size: cover;
+                    background-position:center;
+                    width: 400px;
+                }
+
+                &:hover{
+                    transition: $smooth;
+
+                    img{
+                        scale: 1.1;
+                    }
+                }
+            }
+
+            .blog-details{
+                width: 400px;
+                align-items: center;
+                display: flex;
+                color: rgba($black, 0.7);
+
+                .blog-content{
+
+                    padding: 10px;
+                    border-right: 1px solid #00000065;
+
+                    .blog-title{
+                        transition:$smooth ;
+
+                        color: $secondary-color;
+
+                        &:hover{
+                            color: $primary-color;
+                        }
+                    }
+                }
+                .blog-date{
+                    position: relative;
+                    top: -30px;
+                    padding: 10px;
+
+                    h2{
+                        transition:$smooth ;
+
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        }
+    }
+}

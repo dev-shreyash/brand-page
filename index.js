@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleHoverEffect() {
     if (mediaQuery.matches) {
-      // If the screen is small, make all boxes active
       boxes.forEach(box => box.classList.add('active'));
     } else {
       // For larger screens, handle hover effect and set the first box as active
@@ -87,22 +86,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//
-document.addEventListener('DOMContentLoaded', function() {
-  const accordionItems = document.querySelectorAll('.accordion-item');
+  //faq-accordion
 
-  accordionItems.forEach(item => {
-      const button = item.querySelector('.accordion-button');
-      button.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    const container = document.querySelector('.faq-content').parentElement;
+    const image = document.querySelector('.faq-image img'); // Correctly select the image inside .faq-image
 
-          // Close all active items
-          accordionItems.forEach(i => i.classList.remove('active'));
+    accordionItems.forEach(item => {
+        const button = item.querySelector('.accordion-button');
+        button.addEventListener('click', function() {
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
 
-          // If it was not active, make it active
-          if (!isActive) {
-              item.classList.add('active');
-          }
-      });
-  });
+            // Collapse all items
+            accordionItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.accordion-content').style.maxHeight = '0';
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+
+            let activeHeight = 0;
+            accordionItems.forEach(i => {
+                if (i.classList.contains('active')) {
+                    activeHeight += i.querySelector('.accordion-content').scrollHeight;
+                }
+            });
+            
+            image.style.height = `calc(600px + ${activeHeight}px)`; // Adjust the base height of the image as needed
+        });
+    });
 });
+
+
