@@ -650,11 +650,22 @@ html #root, body #root {
   padding: 0 20px;
   max-width: 1300px;
 }
+@media (max-width: 738px) {
+  .navigation.sticky .nav-container .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: auto;
+    justify-content: space-between !important;
+  }
+}
+.navigation.sticky .nav-container .top .nav-mobile {
+  font-weight: 700;
+  font-size: 2rem;
+}
 .navigation.sticky .nav-container .nav-list {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  gap: 15px;
+  position: fixed;
+  top: 1.4rem;
 }
 .navigation .nav-container {
   display: flex;
@@ -1640,6 +1651,7 @@ html #root, body #root {
 .portfolio .container .portfolio-content .main-box {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
 }
 @media (max-width: 738px) {
@@ -1655,7 +1667,7 @@ html #root, body #root {
   flex-direction: column;
   align-items: flex-end;
   height: 310px;
-  width: 100%;
+  width: 13vw;
   transition: all 0.3s ease;
   color: #fff;
   overflow: hidden;

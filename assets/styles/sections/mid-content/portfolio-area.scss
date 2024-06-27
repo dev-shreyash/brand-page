@@ -29,10 +29,10 @@
 
     .portfolio-content {
 
-
       .main-box {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         justify-content: space-between;
 
         @include sm {
@@ -48,7 +48,7 @@
           align-items: flex-end;
           // background-color: #5a4848;
           height: 310px;
-          width: 100%;
+          width: 13vw;
           transition: all 0.3s ease;
           color: $white;
           overflow: hidden;
